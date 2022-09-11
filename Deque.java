@@ -60,6 +60,8 @@ public class Deque<Item> implements Iterable<Item> {
         }
         Item item = first.item;
         first = first.next;
+        if (first != null) first.prev = null;
+        else               last = first;
         n--;
         return item;
     }
